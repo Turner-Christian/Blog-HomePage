@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Russo_One } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const russoRegular = Russo_One({
+  weight: "400",
   subsets: ["latin"],
-});
+  variable: "--font-russo"
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,15 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geistSans.className}>
-      <>
-        <NavBar/>
+    <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+          className={`${russoRegular.className} antialiased`}
+          >
+          <NavBar/>
           {children}
         </body>
-      </>
     </html>
   );
 }

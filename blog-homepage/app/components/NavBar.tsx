@@ -3,11 +3,12 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
+import Image from "next/Image";
 
 const navItems = [
-    { label: "Home", href: "/"},
-    { label: "About", href: "/about"},
-    { label: "Contact", href: "/contact"},
+    { label: "HOME", href: "/"},
+    { label: "ABOUT", href: "/about"},
+    { label: "CONTACT", href: "/contact"},
 ]
 
 export default function NavBar() {
@@ -17,11 +18,12 @@ export default function NavBar() {
     return (
         <div className="relative z-50">
             {/* NavBar */}
-            <div 
-                className="flex bg-gray-800 p-4 px-6 justify-between items-center fixed w-full
-                    top-0 left-0 z-50 lg:p-7
-                ">
-                <h1 className="text-4xl">Ipsum</h1>
+            <div className="flex bg-gray-900 p-4 px-10 justify-between items-center fixed w-full top-0 left-0 z-50 lg:p-7 lg:px-24">
+
+                {/* Logo */}
+                <a href="/" className="">
+                    <Image src={"/images/logoDark.png"} alt="Logo" width={120} height={100}/>
+                </a>
 
                 {/* Hamburger Button */}
                 <button 
@@ -41,7 +43,7 @@ export default function NavBar() {
                         <li key={item.label}>
                             <a 
                                 href={item.href}
-                                className="bg-gray-700 p-2 px-4 rounded hover:bg-gray-600 lg:p-3"
+                                className="bg-gray-800 p-2 px-4 rounded hover:bg-gray-900 lg:p-3"
                             >{item.label}</a>
                         </li>
                     ))}
@@ -50,7 +52,7 @@ export default function NavBar() {
 
             {/* Mobile Menu Open */}
             {isOpen &&(
-                <div className="fixed top-0 left-0 w-full h-full bg-gray-900 flex flex-col items-center
+                <div className="fixed top-0 left-0 w-full h-full bg-gray-950 flex flex-col items-center
                     justify-center z-40 pt-[64px]
                 ">
                     {navItems.map((item) => (
