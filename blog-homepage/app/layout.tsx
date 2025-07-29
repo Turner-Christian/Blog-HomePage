@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Russo_One } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
+import ArticleCard from "./components/ArticleCard";
 
 const russoRegular = Russo_One({
   weight: "400",
@@ -25,7 +26,6 @@ export default function RootLayout({
         <body
           className={`${russoRegular.className} antialiased`}
           >
-          <NavBar/>
           {children}
         </body>
     </html>

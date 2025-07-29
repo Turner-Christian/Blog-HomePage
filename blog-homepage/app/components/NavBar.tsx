@@ -16,22 +16,25 @@ export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="relative z-50">
+        <div className="sticky top-0 w-full z-50">
             {/* NavBar */}
-            <div className="flex bg-gray-900 p-4 px-10 justify-between items-center fixed w-full top-0 left-0 z-50 lg:p-7 lg:px-24">
+            <div className="flex bg-gray-900 p-4 px-10 justify-between items-center sticky w-full top-0 left-0 z-50 lg:p-7 lg:px-24">
 
                 {/* Logo */}
-                <a href="/" className="">
+                <div>
                     <Image src={"/images/logoDark.png"} alt="Logo" width={120} height={100}/>
-                </a>
+                </div>
 
-                {/* Hamburger Button */}
-                <button 
+                {/* NavBar Title */}
+                <div>
+
+                </div>
+                <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="md:hidden"
-                    >
-                    {isOpen? (
-                        <XMarkIcon className="w-9 h-9 text-white"/>
+                >
+                    {isOpen ? (
+                        <XMarkIcon className="w-9 h-9 text-white" />
                     ) : (
                         <Bars3Icon className="w-8 h-8 text-white"/>
                     )}
