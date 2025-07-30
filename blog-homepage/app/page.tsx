@@ -6,12 +6,39 @@ export default function Home() {
     <div className="mx-auto flex-col">
       <NavBar />
       <ArticleCard
-        title={"This is a test"}
+        title={"Lorem Ipsum Dolor Sit Amet"}
         author={"John Doe"}
-        content={"This is the content of the article."}
+        content={"This is the Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. of the article."}
         description={"This is a brief description of the article."}
         date={"2023-10-01"}
-        src={"https://picsum.photos/200/300"}
+        src={"/images/laptop.jpg"}
+        alt={"An image of the article"}
+      />
+      <ArticleCard
+        title={"Lorem Ipsum Dolor Sit Amet"}
+        author={"John Doe"}
+        content={"This is the Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. of the article."}
+        description={"This is a brief description of the article."}
+        date={"2023-10-01"}
+        src={"/images/office.jpg"}
+        alt={"An image of the article"}
+      />
+      <ArticleCard
+        title={"Lorem Ipsum Dolor Sit Amet"}
+        author={"John Doe"}
+        content={"This is the Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. of the article."}
+        description={"This is a brief description of the article."}
+        date={"2023-10-01"}
+        src={"/images/mall.jpg"}
+        alt={"An image of the article"}
+      />
+      <ArticleCard
+        title={"Lorem Ipsum Dolor Sit Amet"}
+        author={"John Doe"}
+        content={"This is the Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. of the article."}
+        description={"This is a brief description of the article."}
+        date={"2023-10-01"}
+        src={"/images/controller.jpg"}
         alt={"An image of the article"}
       />
     </div>

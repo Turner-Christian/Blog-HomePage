@@ -1,5 +1,5 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import laptopImg from "@/public/images/laptop.jpg";
 
 type ArticleCardProps = {
   title: string;
@@ -7,13 +7,13 @@ type ArticleCardProps = {
   content?: string;
   description?: string;
   date?: string;
-  src?: string | StaticImport;
+  src?: string;
   alt?: string;
 };
 
 const imageSize = {
-    width: 350,
-    height: 300,
+    width: 400,
+    height: 150,
 }
 
 export default function ArticleCard({
@@ -27,23 +27,29 @@ export default function ArticleCard({
 }: ArticleCardProps) {
 
     return(
-        <div className="flex flex-col m-4 p-4 bg-gray-800 rounded">
-            {/* TODO: Add image loading skeleton */}
-            {/* TODO: Fix The image aspect ratio */}
-            {/* TODO: Center the picture */}
-            <div>
+        <div className="flex flex-col m-8 p-4 bg-gray-800 rounded-2xl md:mx-30 md:mt-10">
+            {/* IMAGE */}
+            <div className="flex justify-center">
                 <Image
-                    src={src ?? "https://picsum.photos/200/200"}
+                    src={src ?? laptopImg}
                     alt={alt ?? "Article image"}
                     width={imageSize.width}
                     height={imageSize.height}
+                    className="rounded-2xl md:max-w-2xl md:flex-grow object-cover"
                 />
             </div>
-            <h1 className="text-xl font-bold">{title}</h1>
+            {/* TITLE, AUTHOR, DATE */}
+            <h1 className="text-xl font-bold mt-4">{title}</h1>
             <div className="flex space-x-1 italic">
-                <p className="text-sm pl-3">{author}</p>
+                <p className="text-xs pl-3 text-lime-500">{author}</p>
                 <p className="pl-3">-</p>
-                <p className="text-sm pl-3">{date}</p>
+                <p className="text-xs pl-3 text-lime-500">{date}</p>
+            </div>
+
+                <hr className="border-t border-lime-500 my-4"/>
+            <div>
+                <p>{description}</p>
+                <p className="mt-2 text-sm px-4">{content}</p>
             </div>
         </div>
     );
