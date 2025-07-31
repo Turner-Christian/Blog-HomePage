@@ -12,11 +12,6 @@ type ArticleCardProps = {
   alt?: string;
 };
 
-const imageSize = {
-    width: 400,
-    height: 150,
-}
-
 export default function ArticleCard({
     id,
     title,
