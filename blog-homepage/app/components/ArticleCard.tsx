@@ -27,15 +27,15 @@ export default function ArticleCard({
 }: ArticleCardProps) {
 
     return(
-        <div className="flex flex-col m-8 p-4 bg-gray-800 rounded-2xl md:mx-30 md:mt-10">
+        <div className="flex flex-col m-8 p-4 bg-gray-800 rounded-2xl md:mx-30 md:mt-10 lg:mt-10 lg:mx-2">
             {/* IMAGE */}
-            <div className="flex justify-center">
+            <div className="relative h-0 pb-[56.25%] w-full aspect-w-16 aspect-h-9">
                 <Image
                     src={src ?? laptopImg}
                     alt={alt ?? "Article image"}
-                    width={imageSize.width}
-                    height={imageSize.height}
-                    className="rounded-2xl md:max-w-2xl md:flex-grow object-cover"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-2xl"
                 />
             </div>
             {/* TITLE, AUTHOR, DATE */}
