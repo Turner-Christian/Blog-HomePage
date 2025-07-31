@@ -2,6 +2,7 @@ import Image from "next/image";
 import laptopImg from "@/public/images/laptop.jpg";
 
 type ArticleCardProps = {
+  id: number;
   title: string;
   author?: string;
   content?: string;
@@ -17,6 +18,7 @@ const imageSize = {
 }
 
 export default function ArticleCard({
+    id,
     title,
     author,
     content,
@@ -27,15 +29,16 @@ export default function ArticleCard({
 }: ArticleCardProps) {
 
     return(
-        <div className="flex flex-col m-8 p-4 bg-gray-800 rounded-2xl md:mx-30 md:mt-10 lg:mt-10 lg:mx-2">
+        <div className="flex flex-col m-8 p-4 bg-gray-800 rounded-2xl md:mx-30 md:mt-10 lg:mt-10 lg:mx-2 hover:scale-105 transition-transform duration-300 cursor-pointer hover:bg-gray-700">
             {/* IMAGE */}
-            <div className="relative h-0 pb-[56.25%] w-full aspect-w-16 aspect-h-9">
+            <div className="relative h-0 pb-[56.25%] w-full">
                 <Image
                     src={src ?? laptopImg}
                     alt={alt ?? "Article image"}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-2xl"
+                    fill
+                    // layout="fill"
+                    // objectFit="cover"
+                    className="rounded-2xl object-cover"
                 />
             </div>
             {/* TITLE, AUTHOR, DATE */}
