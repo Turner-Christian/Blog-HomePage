@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
-import Image from "next/Image";
+import Image from "next/image";
 
 const navItems = [
     { label: "HOME", href: "/"},
