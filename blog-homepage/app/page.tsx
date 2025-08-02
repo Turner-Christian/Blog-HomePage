@@ -2,11 +2,22 @@ import ArticleCard from "./components/ArticleCard";
 import NavBar from "./components/NavBar";
 import Footer from './components/Footer';
 
-// Manually setting ID's for the articles
-// This is just for demonstration purposes, in a real application I would fetch this data from an API or database
+
 export default function Home() {
   return (
     <div className="mx-auto bg-slate-950">
+      {/* TODO:
+          - ADD BUTTON FOR PROFILE
+          - WORK ON ACTIONS AND QUERIES
+          - ADD ARTICLES FROM DATABASE
+          - ADD ARTICLES TO DATABASE
+          - CREATE LOGIN PAGE
+          - CREATE SIGNUP PAGE
+          - CREATE PROFILE PAGE
+          - DROP DOWN MENU FOR PROFILE
+          - ONLY GIVE ME ACCESS TO ARTICLES CREATED
+          - PEOPLE CAN HAVE LIKES OR DISLIKES AND SAVED ARTICLES
+      */}
       <NavBar />
       <div className="grid grid-cols-1 justify-center md:grid-cols-1 lg:grid-cols-4 lg:px-5">
         <ArticleCard
