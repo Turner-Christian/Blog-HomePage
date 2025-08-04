@@ -1,4 +1,6 @@
 
+import NavBar from "@/app/components/NavBar"
+import Footer from "@/app/components/Footer"
 
 type ArticleCardProps = {
     id : number;
@@ -14,6 +16,8 @@ type ArticleCardProps = {
 export default function Page() {
     return (
         <div>
+            <NavBar />
+            <Footer />
         </div>
     )
 }
