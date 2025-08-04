@@ -47,7 +47,7 @@ export default function RegisterPage(){
                         type="email"
                         name="email"
                         placeholder="Email"
-                        required />
+                        required /> 
                 </div>
                 <div className="flex flex-col mt-8">
                     <label htmlFor="password">Password :</label>
