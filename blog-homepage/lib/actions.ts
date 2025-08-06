@@ -2,6 +2,7 @@
 
 import { sql } from "./db"
 import bcrypt from "bcrypt";
+import { redirect } from 'next/navigation'
 
 export async function CreateUser(formData : FormData) {
     const email = formData.get("email") as string;
@@ -17,11 +18,17 @@ export async function CreateUser(formData : FormData) {
 
     try {
         await sql`
-        INSERT INTO users (email, username, password_hash)
-        VALUES (${email}, ${username}, ${passwordHash})
+        INSERT INTO users (email, password_hash, username)
+        VALUES (${email}, ${passwordHash}, ${username});
         `;
     } catch (error) {
         console.error("Error inserting user:", error);
-        throw new Error("Could not create user");
+        const errorMessage = typeof error === "object" && error !== null && "message" in error
+            ? (error as { message: string }).message
+            : "Could not create user";
+        throw new Error(errorMessage);
     }
+
+    // Redirect to the homepage after successful registration
+    redirect("/");
 }
