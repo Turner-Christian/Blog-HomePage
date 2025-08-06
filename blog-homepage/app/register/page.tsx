@@ -11,8 +11,15 @@ export default function RegisterPage(){
         try {
             await CreateUser(formData);
             setError("");
-        } catch (err: any) {
-            setError(err.message || "Something went wrong");
+        } catch (error) {
+            setError(
+                error instanceof Error
+                    ? error.message
+                    : typeof error === "string"
+                        ? error
+                        : "Something went wrong"
+            );
+            // setError(error.message || "Something went wrong");
         }
     }
 
@@ -47,7 +54,7 @@ export default function RegisterPage(){
                         type="email"
                         name="email"
                         placeholder="Email"
-                        required /> 
+                        required />
                 </div>
                 <div className="flex flex-col mt-8">
                     <label htmlFor="password">Password :</label>
