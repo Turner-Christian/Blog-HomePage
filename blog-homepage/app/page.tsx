@@ -12,11 +12,11 @@ export default function Home() {
           - ADD ARTICLES FROM DATABASE
           - ADD ARTICLES TO DATABASE
           - CREATE LOGIN PAGE
-          - CREATE SIGNUP PAGE
           - CREATE PROFILE PAGE
           - DROP DOWN MENU FOR PROFILE
           - ONLY GIVE ME ACCESS TO ARTICLES CREATED
           - PEOPLE CAN HAVE LIKES OR DISLIKES AND SAVED ARTICLES
+          - SHOW ERROR IF USERNAME OR EMAIL ALREADY EXISTS
       */}
       <NavBar />
       <div className="grid grid-cols-1 justify-center md:grid-cols-1 lg:grid-cols-4 lg:px-5">

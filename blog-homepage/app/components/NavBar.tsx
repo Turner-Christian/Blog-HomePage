@@ -9,6 +9,8 @@ const navItems = [
     { label: "HOME", href: "/"},
     { label: "ABOUT", href: "/about"},
     { label: "CONTACT", href: "/contact"},
+    { label: "LOGIN", href: "/login"},
+    { label: "SIGN UP", href: "/register"},
 ]
 
 export default function NavBar() {
@@ -46,7 +48,7 @@ export default function NavBar() {
                         <li key={item.label}>
                             <a 
                                 href={item.href}
-                                className="bg-gray-800 p-2 px-4 rounded hover:bg-gray-900 lg:p-3"
+                                className="bg-gray-800 p-2 px-4 rounded hover:bg-lime-600 lg:p-3"
                             >{item.label}</a>
                         </li>
                     ))}
@@ -62,7 +64,7 @@ export default function NavBar() {
                         <a 
                             key={item.label}
                             href={item.href}
-                            className="p-4 m-6 text-4xl text-white"
+                            className="p-4 m-6 text-4xl text-white border-b-2 border-gray-700 hover:text-lime-600"
                             onClick={() => setIsOpen(false)}
                             >{item.label}
                         </a>
