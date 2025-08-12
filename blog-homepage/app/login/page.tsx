@@ -4,15 +4,25 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../components/Footer";
+import { LoginUser } from "@/lib/actions";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 	e.preventDefault();
-
+	const formData = new FormData(e.currentTarget);
+	
+	try {
+		LoginUser(formData)
+	} catch (error) {
+		if (error instanceof Error) {
+			setError(error.message);
+		} else {
+			setError("An unknown error occurred.");
+		}
+	}
   };
 
   return (
